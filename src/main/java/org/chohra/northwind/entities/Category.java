@@ -18,8 +18,6 @@ public class Category {
     private int id;
     @Column(name = "category_name")
     private String categorytName;
-    @Column(name = "category_id")
-    private int categoryId;
     @Column(name = "description")
     private String description;
 }
