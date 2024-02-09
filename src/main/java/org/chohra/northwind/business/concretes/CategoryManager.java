@@ -1,24 +1,23 @@
 package org.chohra.northwind.business.concretes;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.chohra.northwind.business.abstracts.ProductService;
-import org.chohra.northwind.dataAccess.ProductDao;
-import org.chohra.northwind.entities.Product;
+import org.chohra.northwind.business.abstracts.CategoryService;
+import org.chohra.northwind.dataAccess.CategoryDao;
+import org.chohra.northwind.entities.Category;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class ProductManager implements ProductService {
+public class CategoryManager implements CategoryService {
 
-    private ProductDao productDao;
+    private CategoryDao categoryDao;
     @Override
-    public List<Product> getAll() {
+    public List<Category> getAll() {
 
-        List<Product> products = this.productDao.findAll();
+        List<Category> categories = this.categoryDao.findAll();
 
-        return products;
+        return categories;
     }
 }

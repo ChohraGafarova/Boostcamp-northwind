@@ -1,8 +1,8 @@
 package org.chohra.northwind.dataAccess;
 
-import org.chohra.northwind.entities.Product;
+import org.chohra.northwind.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductDao extends JpaRepository<Product, Integer> {
+public interface CategoryDao extends JpaRepository<Category, Integer> {
 
 }
