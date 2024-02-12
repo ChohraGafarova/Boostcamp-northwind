@@ -13,4 +13,5 @@ public interface CategoryService {
 
     DataResult<Category> findByCategoryName(String categoryName);
     DataResult<Category> findByCategoryNameAndDescription(String categoryName, String description);
+    DataResult<Category> findByCategoryId(int categoryId);
 }

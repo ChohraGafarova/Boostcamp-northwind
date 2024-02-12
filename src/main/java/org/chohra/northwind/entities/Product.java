@@ -6,18 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "products")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
+    @Column(name = "product_id")
     private int id;
-    @Column(name = "category_name")
-    private String categoryName;
-    @Column(name = "description")
-    private String description;
+    @Column(name = "product_name")
+    private String productName;
+    @Column(name = "quantity_per_unit")
+    private String quantityPerUnit;
+    @Column(name = "unit_price")
+    private int unitPrice;
 }

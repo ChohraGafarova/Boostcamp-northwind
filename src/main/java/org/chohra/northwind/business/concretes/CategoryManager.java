@@ -14,6 +14,9 @@ import java.util.List;
 public class CategoryManager implements CategoryService {
 
     private CategoryDao categoryDao;
+
+
+
     @Override
     public DataResult<List<Category>> getAll() {
 
@@ -29,7 +32,7 @@ public class CategoryManager implements CategoryService {
 
     @Override
     public DataResult<Category> findByCategoryNameAndDescription(String categoryName, String description) {
-        Category category = this.categoryDao.findByCategorytNameAndDescription(categoryName, description);
+        Category category = this.categoryDao.findByCategoryNameAndDescription(categoryName, description);
         if (category == null){
             return new ErrorDataResult<>("Bele adda category yoxdur.");
         }
@@ -38,11 +41,19 @@ public class CategoryManager implements CategoryService {
 
     @Override
     public DataResult<Category> findByCategoryName(String categoryName) {
-        Category category = this.categoryDao.findByCategorytName(categoryName);
+        Category category = this.categoryDao.findByCategoryName(categoryName);
 
         if (category == null){
             return new ErrorDataResult<>("Bele adda category yoxdur.");
         }
         else {return new SuccessDataResult<>("Ugurla tapildi.", category);}
+    }
+    @Override
+    public DataResult<Category> findByCategoryId(int categoryId) {
+        Category category = this.categoryDao.findByCategoryId(categoryId);
+        if (categoryId < 10){
+            return new SuccessDataResult<>("Ugurla tapildi.", category);
+        }
+        else {return new ErrorDataResult<>("Bele idde category yoxdur.");}
     }
 }

@@ -32,5 +32,9 @@ public class CategoryController {
     public DataResult<Category> findByCategoryNameAndDescription(@RequestParam String categoryName, String description){
             return this.categoryService.findByCategoryNameAndDescription(categoryName, description);
         }
+        @GetMapping("/find-by-category-id")
+        public DataResult<Category> findByCategoryId(@RequestParam int categoryId){
+            return this.categoryService.findByCategoryId(categoryId);
+        }
 }
 
