@@ -5,6 +5,8 @@ import org.chohra.northwind.business.abstracts.ProductService;
 import org.chohra.northwind.core.utilities.results.DataResult;
 import org.chohra.northwind.core.utilities.results.Result;
 import org.chohra.northwind.entities.Product;
+import org.chohra.northwind.entities.dtos.ProductDto;
+import org.chohra.northwind.entities.dtos.ProductWithCategoryDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,12 +21,12 @@ public class ProductController {
         return this.productService.getAll();
     }
     @PostMapping("/addProduct")
-    public Result add(@RequestBody Product product){
+    public Result add(@RequestBody ProductDto product){
         return this.productService.add(product);
     }
 
     @GetMapping("/find-by-category-name")
-    public DataResult<Product> findByProductName(@RequestParam String productName){
+    public DataResult<ProductWithCategoryDetails> findByProductName(@RequestParam String productName){
         return this.productService.findByProductName(productName);
     }
 }

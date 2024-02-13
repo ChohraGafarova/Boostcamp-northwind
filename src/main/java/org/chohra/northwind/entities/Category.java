@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Table(name = "categories")
 @Data
@@ -13,11 +14,17 @@ import lombok.NoArgsConstructor;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
     private int id;
+
     @Column(name = "category_name")
     private String categoryName;
-    @Column(name = "description")
+
+    @Column( name = "description")
     private String description;
+
+    public Category orElse(Object o) {
+        return null;
+    }
 }

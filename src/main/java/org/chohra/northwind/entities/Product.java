@@ -22,4 +22,17 @@ public class Product {
     private String quantityPerUnit;
     @Column(name = "unit_price")
     private int unitPrice;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+
+    private Category category;
+
+
+    public Product(String productName, String quantityPerUnit, int unitPrice, Category category) {
+        this.productName = productName;
+        this.quantityPerUnit = quantityPerUnit;
+        this.unitPrice = unitPrice;
+        this.category = category;
+    }
 }
