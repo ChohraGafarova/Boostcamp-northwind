@@ -13,5 +13,5 @@ public interface ProductService {
     Result add(Product product);
 
     DataResult<Product> findByProductName(String productName);
-    DataResult<Product> findByProductId(int productId);
+    DataResult<Product> findById(int productId);
 }

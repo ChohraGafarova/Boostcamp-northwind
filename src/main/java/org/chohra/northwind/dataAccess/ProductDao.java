@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ProductDao extends JpaRepository<Product, Integer> {
 
     Product findByProductName(String productname);
-    Product findByProductId(int productId);
+    Product findById(int productId);
 }

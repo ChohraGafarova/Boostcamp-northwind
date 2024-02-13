@@ -7,5 +7,5 @@ public interface CategoryDao extends JpaRepository<Category, Integer> {
 
     Category findByCategoryName(String categoryname);
     Category findByCategoryNameAndDescription(String categoryName, String description);
-    Category findByCategoryId(int categoryId);
+    Category findById(int categoryId);
 }

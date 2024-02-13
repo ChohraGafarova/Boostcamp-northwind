@@ -50,7 +50,7 @@ public class CategoryManager implements CategoryService {
     }
     @Override
     public DataResult<Category> findByCategoryId(int categoryId) {
-        Category category = this.categoryDao.findByCategoryId(categoryId);
+        Category category = this.categoryDao.findById(categoryId);
         if (categoryId < 10){
             return new SuccessDataResult<>("Ugurla tapildi.", category);
         }

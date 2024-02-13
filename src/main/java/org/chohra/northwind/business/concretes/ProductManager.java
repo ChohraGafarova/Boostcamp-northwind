@@ -36,8 +36,8 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public DataResult<Product> findByProductId(int productId) {
-        Product product = this.productDao.findByProductId(productId);
+    public DataResult<Product> findById(int productId) {
+        Product product = this.productDao.findById(productId);
         if (productId <= 5){
             return new SuccessDataResult<>("Ugurla tapildi.", product);
         }
