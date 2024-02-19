@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 public class UserManager extends User {
-    // The private instance variables
     private List<User> users;
 
     public UserManager() {
