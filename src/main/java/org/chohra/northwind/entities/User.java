@@ -1,9 +1,14 @@
 package org.chohra.northwind.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
 public class User {
+    @Getter
     private String userName;
+    @Setter
     private String password;
 
     public User(String userName, String password) {
@@ -16,14 +21,6 @@ public class User {
     }
 
     public User() {
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     private boolean isUserNameUnique(String userName) {
